@@ -4,7 +4,10 @@ import Logo from '../components/Logo';
 import SearchBar from '../components/SearchBar';
 
 class Navigation extends Component {
-    state = {}
+    state = {
+        currentCity: '',
+    }
+
     render() {
         return (<div className="navigation">
             <Logo />

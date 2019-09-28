@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/SearchBar.scss'
+import { AppContext } from '../context/AppProvider';
 
 class SearchBar extends Component {
     state = {
@@ -16,16 +17,24 @@ class SearchBar extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.setState({
-            city: this.state.value,
             value: "",
-        });
+        })
     }
 
+
     render() {
-        return (<form onSubmit={this.handleSubmit} className="searchbar">
-            <input type="text" className="searchbar__input" value={this.state.value} onChange={this.handleChange} />
-            <button type="submit" className="searchbar__submit">S</button>
-        </form>);
+        return (
+            <AppContext.Consumer>
+                {(context) => (
+                    <form onSubmit={(e) => { context.setCity(this.state.value); this.handleSubmit(e) }} className="searchbar">
+                        <input type="text" className="searchbar__input" value={this.state.value} onChange={this.handleChange} placeholder="enter the city" />
+                        <button type="submit" className="searchbar__submit">S</button>
+                    </form>
+                )
+                }
+            </AppContext.Consumer>
+
+        );
     }
 }
 
