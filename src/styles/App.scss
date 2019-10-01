@@ -1,0 +1,32 @@
+.sideNavLayout {
+    grid-area: sideNav;
+    background-color: aliceblue;
+}
+
+.mainLayout {
+    grid-area: main;
+    background-color: aquamarine;
+}
+
+.headerLayout {
+    grid-area: header;
+}
+
+.navigation {
+    grid-area: navigation;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto auto 80px;
+    grid-template-areas:
+        "header header"
+        "sideNav main"
+        "footer footer"
+}

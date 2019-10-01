@@ -3,6 +3,7 @@ import '../styles/App.scss';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Navigation from './Navigation';
 import Header from './Header';
+import SideNav from './SideNav';
 import Page from './Page';
 import Footer from './Footer';
 import { AppProvider } from '../context/AppProvider';
@@ -14,22 +15,29 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
-        <div className="App">
-          <AppProvider>
-            <header>
-              <nav><Navigation /></nav>
-              <Header />
-            </header>
-            <main>
-              <Page />
-            </main>
-            <footer>
-              <Footer />
-            </footer>
-          </AppProvider>
-        </div>
-      </Router>
+      <div className="App">
+
+        <AppProvider>
+          <Router>
+            <div className="container">
+              <header className="headerLayout">
+                <nav><Navigation /></nav>
+                <Header />
+              </header>
+              <aside className="sideNavLayout">
+                <SideNav />
+              </aside>
+              <main className="mainLayout">
+                <Page />
+              </main>
+              <footer>
+                <Footer />
+              </footer>
+            </div>
+          </Router>
+        </AppProvider>
+      </div>
+
     );
   }
 }

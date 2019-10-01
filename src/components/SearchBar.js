@@ -18,7 +18,7 @@ class SearchBar extends Component {
         e.preventDefault();
         this.setState({
             value: "",
-        })
+        });
     }
 
 
@@ -26,7 +26,7 @@ class SearchBar extends Component {
         return (
             <AppContext.Consumer>
                 {(context) => (
-                    <form onSubmit={(e) => { context.setCity(this.state.value); this.handleSubmit(e) }} className="searchbar">
+                    <form onSubmit={(e) => { context.setCity(this.state.value); this.handleSubmit(e); context.fetchData(); }} className="searchbar">
                         <input type="text" className="searchbar__input" value={this.state.value} onChange={this.handleChange} placeholder="enter the city" />
                         <button type="submit" className="searchbar__submit">S</button>
                     </form>

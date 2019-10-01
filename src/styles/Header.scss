@@ -1,0 +1,18 @@
+.header {
+    display: block;
+    font-size: 5rem;
+    background-image: url('../img/warsaw.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 300px;
+    min-height: 300px;
+    color: whitesmoke;
+
+    &__filter {
+        background-color: rgba(164, 189, 243, 0.65)
+    }
+}
