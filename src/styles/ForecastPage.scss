@@ -1,0 +1,56 @@
+.forecastPage {
+    padding: 30px;
+
+    &__content {
+        display: grid;
+        grid-gap: 30px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+    }
+
+    &__title {
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+
+    &__buttons {
+        display: flex;
+        max-width: 400px;
+        justify-content: space-between;
+    }
+}
+
+.tile {
+    &__content {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        font-size: 16px;
+        box-shadow: 0 1px 2.5px darkgrey;
+        border-radius: 3px;
+        background-color: #fff;
+        transition: .2s linear all;
+        margin-top: 30px;
+
+        p {
+            margin-block-start: .25em;
+            margin-block-end: .25em;
+
+        }
+    }
+
+    &__date {
+        text-align: center;
+    }
+
+    &__icon {
+        width: 80px;
+        align-self: center;
+    }
+
+    &__description {
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+}

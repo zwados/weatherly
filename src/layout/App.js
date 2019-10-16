@@ -9,11 +9,14 @@ import Footer from './Footer';
 import { AppProvider } from '../context/AppProvider';
 
 class App extends Component {
+
+
   state = {
     currentCity: '',
   }
 
   render() {
+
     return (
       <div className="App">
 

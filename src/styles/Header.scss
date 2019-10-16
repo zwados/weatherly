@@ -8,11 +8,18 @@
     background-blend-mode: darken;
     text-transform: uppercase;
     text-align: center;
-    line-height: 300px;
     min-height: 300px;
     color: whitesmoke;
 
+    &--default {
+        font-size: 2rem;
+    }
+
     &__filter {
-        background-color: rgba(164, 189, 243, 0.65)
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 300px;
+        background-color: rgba(164, 189, 243, 0.65);
     }
 }
