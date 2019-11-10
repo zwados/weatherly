@@ -3,7 +3,7 @@ import '../styles/App.scss';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Navigation from './Navigation';
 import Header from './Header';
-import SideNav from './SideNav';
+import Navi from './Navi';
 import Page from './Page';
 import Footer from './Footer';
 import { AppProvider } from '../context/AppProvider';
@@ -27,9 +27,9 @@ class App extends Component {
                 <nav><Navigation /></nav>
                 <Header />
               </header>
-              <aside className="sideNavLayout">
-                <SideNav />
-              </aside>
+              <nav className="navLayout">
+                <Navi />
+              </nav>
               <main className="mainLayout">
                 <Page />
               </main>

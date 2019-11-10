@@ -4,10 +4,18 @@
     font-size: 15px;
     box-shadow: 0 1px 2.5px darkgrey;
     border-radius: 3px;
+    cursor: pointer;
+    transition: linear .2s all;
 
     &--dark {
         background-color: #454545;
         color: whitesmoke;
+
+        &:hover {
+            background-color: whitesmoke;
+            color: #454545;
+            box-shadow: 0 2px 2.5px darkgrey;
+        }
     }
 
 }

@@ -45,6 +45,8 @@ class ForecastPage extends Component {
     }
 
     render() {
+        let forecastStart = ((this.state.forecastLength / 3) - ((this.state.forecastLength / 3) / (this.state.forecastLength / 24)));
+        let forecastEnd = (this.state.forecastLength / 3);
 
 
         return (
@@ -53,7 +55,7 @@ class ForecastPage extends Component {
                 <div className="forecastPage__buttons">{this.forecastOptions.map(option => <button className="button-primary button-primary--dark" key={option + 'hours'} onClick={() => this.handleClick(option)}>{option} hours</button>)}</div>
 
                 {(this.state.data) ? <div className="forecastPage__content">
-                    {this.state.data.list.slice(0, (this.state.forecastLength / 3)).map((day) =>
+                    {this.state.data.list.slice(forecastStart, forecastEnd).map((day) =>
                         <ForecastTile key={day.dt} data={day} />
                     )}
                 </div> : null}

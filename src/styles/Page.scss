@@ -18,3 +18,155 @@
         background-color: #3B5998;
     }
 }
+
+.tile {
+    &__content {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        font-size: 16px;
+        box-shadow: 0 1px 2.5px darkgrey;
+        border-radius: 3px;
+        background-color: #fff;
+        transition: .2s linear all;
+        margin-top: 30px;
+
+        p {
+            margin-block-start: .25em;
+            margin-block-end: .25em;
+
+        }
+    }
+
+    &__date {
+        text-align: center;
+    }
+
+    &__icon {
+        width: 80px;
+        align-self: center;
+    }
+
+    &__description {
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &__windbox {
+        font-size: 70px;
+        color: blue;
+    }
+
+    &__wind {
+        &--north {
+            transform: rotate(190deg);
+            animation: 3s north infinite linear;
+        }
+
+        &--east {
+            transform: rotate(280deg);
+            animation: 3s east infinite linear;
+        }
+
+        &--south {
+            transform: rotate(10deg);
+            animation: 3s south infinite linear;
+        }
+
+        &--west {
+            transform: rotate(100deg);
+            animation: 3s west infinite linear;
+        }
+    }
+
+}
+
+//wind arrow animations
+
+@keyframes north {
+    0% {
+        transform: rotate(190deg);
+    }
+
+    25% {
+        transform: rotate(180deg);
+    }
+
+    50% {
+        transform: rotate(190deg);
+    }
+
+    75% {
+        transform: rotate(200deg);
+    }
+
+    100% {
+        transform: rotate(190deg)
+    }
+}
+
+@keyframes east {
+    0% {
+        transform: rotate(280deg);
+    }
+
+    25% {
+        transform: rotate(270deg);
+    }
+
+    50% {
+        transform: rotate(280deg);
+    }
+
+    75% {
+        transform: rotate(290deg);
+    }
+
+    100% {
+        transform: rotate(280deg)
+    }
+}
+
+@keyframes south {
+    0% {
+        transform: rotate(10deg);
+    }
+
+    25% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    75% {
+        transform: rotate(20deg);
+    }
+
+    100% {
+        transform: rotate(10deg)
+    }
+}
+
+@keyframes west {
+    0% {
+        transform: rotate(100deg);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(100deg);
+    }
+
+    75% {
+        transform: rotate(110deg);
+    }
+
+    100% {
+        transform: rotate(100deg)
+    }
+}

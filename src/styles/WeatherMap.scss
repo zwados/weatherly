@@ -1,0 +1,46 @@
+.WeatherMap {
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+}
+
+.mapTileButtons {
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    border: none;
+    transform: translateX(105%);
+}
+
+.mapTileButton {
+    direction: ltr;
+    overflow: hidden;
+    text-align: center;
+    height: 40px;
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    color: rgb(86, 86, 86);
+    font-family: Roboto, Arial, sans-serif;
+    user-select: none;
+    font-size: 18px;
+    background-color: rgb(255, 255, 255);
+    padding: 0px 23px;
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 3px 0px;
+    min-width: 130px;
+    border: none;
+    margin-bottom: 10px;
+    transition: all .2s linear;
+
+    &:hover,
+    &:target {
+        cursor: pointer;
+        background-color: rgb(86, 86, 86);
+        color: rgb(255, 255, 255);
+        outline-color: transparent;
+    }
+}

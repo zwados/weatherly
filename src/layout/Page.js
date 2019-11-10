@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { AppContext } from '../context/AppProvider';
 import ForecastPage from '../pages/ForecastPage';
-import CurrentWeather from '../pages/CurrentWeather';
+import WeatherPage from '../pages/WeatherPage';
 import UVIndex from '../pages/UVIndex';
-import WeatherMap from '../pages/WeatherMap';
+import MapPage from '../pages/MapPage';
 import WeatherAlerts from '../pages/WeatherAlerts';
 import WelcomePage from '../pages/WelcomePage';
 import SearchBar from '../components/SearchBar';
@@ -24,8 +24,8 @@ export default class Page extends Component {
             component: WelcomePage,
         },
         {
-            path: "/CurrentWeather",
-            component: CurrentWeather,
+            path: "/WeatherPage",
+            component: WeatherPage,
         },
         {
             path: "/ForecastPage",
@@ -36,8 +36,8 @@ export default class Page extends Component {
             component: UVIndex,
         },
         {
-            path: "/WeatherMap",
-            component: WeatherMap,
+            path: "/MapPage",
+            component: MapPage,
         },
         {
             path: "/WeatherAlerts",
@@ -45,32 +45,6 @@ export default class Page extends Component {
         }
     ];
 
-    componentDidUpdate() {
-        console.log('mounted page')
-    }
-
-
-
-
-    /*return (
-        <AppContext.Consumer>
-            {(context) => (
-                <div className="page">
-
-                    <Switch>
-                        <Route path="/" exact component={WelcomePage} />
-                        <Route path="/CurrentWeather" component={CurrentWeather} />
-                        <Route path="/FiveDaysForecast" component={FiveDaysForecast} />
-                        <Route path="/UVIndex" component={UVIndex} />
-                        <Route path="/WeatherMap" component={WeatherMap} />
-                        <Route path="/WeatherAlerts" component={WeatherAlerts} />
-                    </Switch>
-
-                </div>
-            )}
-        </AppContext.Consumer>
-    );
-    */
     render() {
         if (this.context.state.city) {
             return (
