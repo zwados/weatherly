@@ -1,0 +1,32 @@
+.navi {
+    background-color: #3B5998;
+
+    &__list {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        margin: 0;
+
+        & li {
+            margin-right: 2em;
+            border-bottom: 1px solid whitesmoke;
+
+
+            & a {
+                font-size: 20px;
+                text-decoration: none;
+                text-transform: uppercase;
+
+                color: whitesmoke;
+                transition: all .2s;
+
+                &:hover {
+                    text-shadow: 1px 1px 1px #878787;
+                    color: white;
+                    transform: translate(10px, 20px);
+                }
+            }
+        }
+    }
+}

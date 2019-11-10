@@ -1,0 +1,13 @@
+.weatherPage {
+    padding: 30px;
+
+    &__content {
+        display: flex;
+
+    }
+
+    &__title {
+        font-size: 20px;
+        text-transform: uppercase;
+    }
+}
