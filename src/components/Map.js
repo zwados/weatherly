@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ForecastTile from './ForecastTile';
 import MapStyle from '../pages/content/MapStyle';
 import { AppContext } from '../context/AppProvider';
 
@@ -9,9 +8,9 @@ import { AppContext } from '../context/AppProvider';
 const mapStyles = {
   map: {
     position: 'relative',
-    minWidth: '1200px',
     width: '100%',
-    height: '40em',
+    maxWidth: '1200px',
+    height: '35em',
     margin: '0 auto'
 
   }
@@ -137,7 +136,6 @@ export class CurrentLocation extends React.Component {
 
   render() {
     const style = Object.assign({}, mapStyles.map);
-    console.log(this.props.data)
     return (
       <>
         <div style={style} ref="map">

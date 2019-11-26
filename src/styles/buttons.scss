@@ -1,3 +1,5 @@
+@import './breakpoints.scss';
+
 .button-primary {
     border: none;
     padding: 15 7.5px;
@@ -6,6 +8,11 @@
     border-radius: 3px;
     cursor: pointer;
     transition: linear .2s all;
+
+    @include mobile {
+        font-size: 11px;
+        padding: 4px;
+    }
 
     &--dark {
         background-color: #454545;

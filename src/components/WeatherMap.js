@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { GoogleApiWrapper } from 'google-maps-react';
 import { CurrentLocation } from '../components/Map';
 import MapTileButton from './MapTileButton';
+import MapTileMenu from './MapTileMenu';
 import '../styles/WeatherMap.scss';
 
 
@@ -15,7 +16,8 @@ class WeatherMap extends Component {
             lat: this.props.data.coord.lat,
             lng: this.props.data.coord.lon
         },
-        mapType: 'clouds_new'
+        mapType: 'clouds_new',
+        menu: false,
     }
 
     //map types available in OWM free user plan
@@ -29,10 +31,13 @@ class WeatherMap extends Component {
         this.setState({ mapType: e.target.id });
     }
 
+
+
     render() {
         return (
             this.data ? <div className="WeatherMap">
                 <div className="mapTileButtons">
+                    <MapTileMenu />
                     {this.mapTypes.map((mapType) => (
                         <MapTileButton handleClick={this.handleMapTypeChange} buttonText={mapType} itemId={mapType} key={mapType} />
                     ))}

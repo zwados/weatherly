@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+@import './breakpoints.scss';
 
 .logo {
     color: whitesmoke;
     font-weight: 600;
     font-family: 'Lobster', cursive;
-    line-height: 20px;
-    font-size: 25px;
+    line-height: 3rem;
+    font-size: 2rem;
+    grid-area: logo;
+
+    @include mobile {
+        font-size: 1.8rem;
+    }
 
 }

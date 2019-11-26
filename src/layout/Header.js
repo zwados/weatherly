@@ -6,7 +6,7 @@ class Header extends Component {
 
     state = {
         data: 'Warsaw',
-        backgroundImage: '',
+        backgroundImage: 'https://pixabay.com/get/50e9d5414351b108f5d084609629337c173bd7e3564c704c722b7bdd9f49c15a_1280.jpg',
     }
 
     static contextType = AppContext;

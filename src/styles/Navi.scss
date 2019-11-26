@@ -1,31 +1,64 @@
+@import './breakpoints.scss';
+
 .navi {
-    background-color: #3B5998;
+    background-color: #1f1f1f;
+
+    @include mobile {
+        width: 100%;
+
+    }
 
     &__list {
         list-style-type: none;
         display: flex;
         justify-content: center;
-        padding: 20px;
         margin: 0;
+        grid-area: links;
+
+        @include mobile {
+            flex-direction: column;
+            padding: 0;
+            display: none;
+        }
 
         & li {
-            margin-right: 2em;
-            border-bottom: 1px solid whitesmoke;
-
+            @include mobile {
+                margin: 0 auto;
+            }
 
             & a {
-                font-size: 20px;
+                font-size: 1rem;
                 text-decoration: none;
                 text-transform: uppercase;
-
                 color: whitesmoke;
-                transition: all .2s;
+                transition: all .2s linear;
+                line-height: 3rem;
+                position: relative;
+                padding: 0.8rem 15px;
+
+
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: -2px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 0%;
+                    height: 5px;
+                    background-color: whitesmoke;
+                    border-radius: 3px;
+                    transition: all .2s linear;
+                }
+
+                &:hover:before {
+                    width: 100%;
+                }
 
                 &:hover {
-                    text-shadow: 1px 1px 1px #878787;
-                    color: white;
-                    transform: translate(10px, 20px);
+                    background-color: rgb(66, 66, 66);
                 }
+
             }
         }
     }

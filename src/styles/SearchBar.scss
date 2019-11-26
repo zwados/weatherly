@@ -1,16 +1,36 @@
+@import './breakpoints.scss';
+
 .searchbar {
-    max-width: 300px;
+    align-content: center;
+    line-height: 3rem;
+    grid-area: searchbar;
 
     & input {
+        justify-self: center;
+        width: 10rem;
         border-radius: 20px;
         border: none;
         padding: 5px 10px;
         font-size: 16px;
+        transition: .2s linear width;
+
+        @include mobile {
+            width: 180px;
+            font-size: 16px;
+        }
+
+
+
+        &:active,
+        &:focus {
+            outline-color: transparent;
+        }
+
     }
 
     & button {
         position: relative;
-        left: -10%;
+        left: -30px;
         border-radius: 50%;
         border: none;
         padding: 5px;
@@ -18,6 +38,11 @@
         font-size: 16px;
         background-color: #efefef;
         transition: .2s linear all;
+        color: #434343;
+
+        @include mobile {
+            font-size: 16px;
+        }
 
         &:hover {
             background-color: #dedede;

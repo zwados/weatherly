@@ -6,7 +6,6 @@ import WeatherPage from '../pages/WeatherPage';
 import UVIndex from '../pages/UVIndex';
 import MapPage from '../pages/MapPage';
 import WeatherAlerts from '../pages/WeatherAlerts';
-import WelcomePage from '../pages/WelcomePage';
 import SearchBar from '../components/SearchBar';
 import '../styles/Page.scss';
 
@@ -21,7 +20,7 @@ export default class Page extends Component {
     routes = [
         {
             path: "/",
-            component: WelcomePage,
+            component: WeatherPage,
         },
         {
             path: "/WeatherPage",

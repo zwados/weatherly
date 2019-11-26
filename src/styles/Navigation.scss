@@ -1,7 +1,69 @@
+@import './breakpoints.scss';
+
 .navigation {
-    background-color: #3B5998;
+    background-color: #1f1f1f;
     display: grid;
-    grid-template-columns: 2fr auto;
-    padding: 20px 100px;
-    box-shadow: 0 1px 2px #989898;
+    box-shadow: 0 .5px 3px #1f1f1f;
+    grid-template-areas: 'logo links searchbar';
+    justify-content: space-around;
+    position: absolute;
+    z-index: 1000;
+    padding: 0 5%;
+    transform: translateY(-10px);
+
+
+    @include mobile {
+        justify-items: center;
+        grid-template-areas:
+            'logo logo menu'
+            'searchbar searchbar menu'
+            'links links links';
+        padding: 0 20px 10px 20px;
+
+    }
+
+    @include tablet {
+        justify-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+            'logo searchbar'
+            'links links';
+    }
+
+    &__iconbox {
+        width: 30px;
+        grid-area: menu;
+        text-align: center;
+        margin: auto 0;
+        display: none;
+
+        @include mobile {
+            display: block;
+        }
+    }
+
+    &__menu {
+        display: none;
+        border: none;
+        background-color: #fff;
+        border-radius: 100%;
+        font-size: 26px;
+        color: #343434;
+
+
+
+        @include mobile {
+            display: flex;
+        }
+
+
+    }
+}
+
+#navigationMenu {
+    display: none;
+
+    &:checked~.navi__list {
+        display: flex;
+    }
 }

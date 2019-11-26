@@ -1,21 +1,34 @@
+@import './breakpoints.scss';
+
 .forecastPage {
-    padding: 30px;
+
+    @include mobile {}
 
     &__content {
         display: grid;
         grid-gap: 30px;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: auto;
-    }
+        justify-content: center;
 
-    &__title {
-        font-size: 20px;
-        text-transform: uppercase;
+        @include mobile {
+            grid-template-columns: repeat(1, .7fr);
+        }
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
     &__buttons {
         display: flex;
-        max-width: 400px;
+        width: 400px;
         justify-content: space-between;
+        margin-bottom: 30px;
+
+        @include mobile {
+            max-width: 300px;
+            justify-content: space-evenly;
+        }
     }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons'
+import { faArrowUp, faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 
 const WeatherTile = (props) => {
     const { main, sys, visibility, wind, weather, clouds } = props.data;
@@ -30,25 +30,54 @@ const WeatherTile = (props) => {
 
     }
     getWindDirection();
-    console.log(windDirection);
 
-    return (<div className="tile__content">
-
-        <h3 className='tile__date'>Today</h3>
-        <div className="tile_temp">{temp}</div>
-        <img className="tile__icon" src={`http://openweathermap.com/img/w/${weather[0].icon}.png`} alt="weather-icon" />
-        <h3 className='tile__description'>{weather[0].description}</h3>
-        <p>Temperature (min / max): {minTemp} / {maxTemp}</p>
-        <p>Cloudiness: {clouds.all} %</p>
-        <p>Humidity: {main.humidity} %</p>
-        <p>Visibility: {vision} km</p>
-        <p>Pressure: {main.pressure}</p>
-        <div className="tile__windbox">
-            <FontAwesomeIcon className={`tile__wind--${windDirection}`} icon={faArrowUp} />
+    return (<div className="weatherTiles">
+        <div className="weatherTile">
+            <div data-aos="zoom-in" data-aos-duration='1000' className="weatherTile__container weatherTile__container--column">
+                <div className="weatherTile__current">
+                    <h3 className='weatherTile__date'>Today</h3>
+                    <div className="weatherTile__weather">
+                        <img className="weatherTile__icon--current" src={`http://openweathermap.com/img/w/${weather[0].icon}.png`} alt="weather-icon" />
+                        <div className="weatherTile__temp">{temp}</div>
+                    </div>
+                    <h3 className='weatherTile__description'>{weather[0].description}</h3>
+                </div>
+            </div>
         </div>
-        <p>The wind blows from the {windDirection} with the speed of {wind.speed} m/s</p>
-        <p>Sunrise: {`${sunriseTime}`} </p>
-        <p>Sunset: {`${sunsetTime}`}  </p>
+        <div className="weatherTile">
+            <div data-aos="zoom-in" data-aos-duration='1000' className="weatherTile__container weatherTile__container--column">
+                <div className="weatherTile__conditions">
+                    <h2>Conditions:</h2>
+                    <p>Temp. (min / max): {minTemp} / {maxTemp}</p>
+                    <p>Cloudiness: {clouds.all} %</p>
+                    <p>Humidity: {main.humidity} %</p>
+                    <p>Visibility: {vision} km</p>
+                    <p>Pressure: {main.pressure}</p>
+                </div>
+            </div>
+        </div>
+        <div className="weatherTile">
+            <div data-aos="zoom-in" data-aos-duration='1000' className="weatherTile__container weatherTile__container--column">
+                <div className="weatherTile__wind">
+                    <h2>Wind</h2>
+                    <div className="weatherTile__windbox">
+                        <FontAwesomeIcon className={`tile__wind--${windDirection}`} icon={faArrowUp} />
+                    </div>
+                    <p>The wind blows from the {windDirection} with the speed of {wind.speed} m/s</p>
+                </div>
+            </div>
+        </div>
+        <div className="weatherTile">
+            <div data-aos="zoom-in" data-aos-duration='1000' className="weatherTile__container weatherTile__container--column">
+                <div className="weatherTile__time weatherTile__time--top"><FontAwesomeIcon className="weatherTile__icon--sun" icon={faSun} />
+                    <p className="weatherTile__time--sunrise">Sunrise: {`${sunriseTime}`} </p>
+                </div>
+                <div className="weatherTile__time weatherTile__time--bottom">
+                    <FontAwesomeIcon className="weatherTile__icon--moon" icon={faMoon} />
+                    <p className="weatherTile__time--sunset">Sunset: {`${sunsetTime}`}  </p>
+                </div>
+            </div>
+        </div>
     </div>);
 }
 

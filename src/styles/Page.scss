@@ -1,21 +1,70 @@
+@import './breakpoints.scss';
+
+.page {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    &__title {
+        font-size: 20px;
+        text-transform: uppercase;
+        position: relative;
+        padding-bottom: .5rem;
+        display: inline-block;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 3px;
+            background-color: #3B5998;
+            border-radius: 3px;
+        }
+    }
+}
+
+
 .defaultPage {
     padding: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
 
+    @include mobile {
+        padding: 10px;
+    }
+
     &__title {
         font-size: 20px;
         text-transform: uppercase;
         color: whitesmoke;
         margin-bottom: 25px;
+
+        @include mobile {
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
     }
 
     &__content {
         padding: 50px;
         box-shadow: 0 1px 2.5px darkgrey;
         border-radius: 3px;
-        background-color: #3B5998;
+        background-color: rgb(66, 66, 66);
+
+        @include mobile {
+            padding: 20px;
+        }
+    }
+
+    .searchbar__input {
+        max-width: 20em;
+
+        @include mobile {
+            max-width: 10em;
+        }
     }
 }
 
@@ -29,7 +78,6 @@
         border-radius: 3px;
         background-color: #fff;
         transition: .2s linear all;
-        margin-top: 30px;
 
         p {
             margin-block-start: .25em;
@@ -44,7 +92,7 @@
 
     &__icon {
         width: 80px;
-        align-self: center;
+        margin: 0 auto;
     }
 
     &__description {

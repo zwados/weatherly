@@ -1,3 +1,30 @@
+@import './breakpoints.scss';
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+button {
+    outline-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    color: #343434;
+}
+
+body {
+    background-image: url('../img/global-bg.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 .navLayout {
     grid-area: navi;
     background-color: aliceblue;
@@ -6,9 +33,13 @@
 .mainLayout {
     grid-area: main;
     background-color: whitesmoke;
-    display: flex;
     justify-content: center;
     padding: 30px;
+    min-height: 50vh;
+
+    @include mobile {
+        padding: 15px;
+    }
 }
 
 .headerLayout {
@@ -21,16 +52,34 @@
 
 .footer {
     grid-area: footer;
+    background-color: #1f1f1f;
+    width: 100%;
+    text-align: center;
+    line-height: 40px;
+    color: whitesmoke;
+    font-weight: 600;
+    margin-top: 30px;
+
+
+    &__span {
+        font-weight: 500;
+        font-family: 'Lobster', cursive;
+    }
 }
 
 .container {
-    width: 100%;
+    background-color: whitesmoke;
+    max-width: 1400px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 1fr;
     grid-template-areas:
-        "header header"
-        "navi navi"
-        "main main"
-        "footer footer"
+        "header"
+        "main"
+        "footer";
+    box-shadow: 0 .5px 10px #585858;
+
+    @include mobile {
+        max-width: 600px;
+    }
 }

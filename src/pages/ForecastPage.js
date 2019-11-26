@@ -21,21 +21,23 @@ class ForecastPage extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
-        console.log(prevProps);
-        console.log(this.state);
-
         if (prevState === this.state) {
             this.fetchData();
         }
     }
 
-    fetchData = async () => {
+    fetchData = () => {
         let value = this.context;
         let API = `https://api.openweathermap.org/data/2.5/forecast?q=${value.state.city}&appid=f2d74a34f19c8b461a1356213ca592fc`;
-        const response = await fetch(API);
-        await response.json()
+        fetch(API)
+            .then((response) => {
+                if (!response.ok) {
+                    throw Error(response.statusText)
+                }
+                return response.json()
+            })
             .then(data => this.setState({ data: data }))
-            .catch(() => alert(this.state.error))
+            .catch((err) => alert('Invalid city name'))
     }
 
     forecastOptions = [24, 48, 72, 96, 120]
@@ -51,8 +53,8 @@ class ForecastPage extends Component {
 
         return (
             <div className="forecastPage">
-                <h1 className="forecastPage__title">The next {this.state.forecastLength} hours in {this.context.state.city}</h1>
-                <div className="forecastPage__buttons">{this.forecastOptions.map(option => <button className="button-primary button-primary--dark" key={option + 'hours'} onClick={() => this.handleClick(option)}>{option} hours</button>)}</div>
+                <h1 data-aos="fade-right" data-aos-delay="500" data-aos-easing="ease-in-sine" className="page__title">The next {this.state.forecastLength} hours in {this.context.state.city}</h1>
+                <div data-aos="zoom-in" data-aos-delay="500" className="forecastPage__buttons">{this.forecastOptions.map(option => <button className="button-primary button-primary--dark" key={option + 'hours'} onClick={() => this.handleClick(option)}>{option} hours</button>)}</div>
 
                 {(this.state.data) ? <div className="forecastPage__content">
                     {this.state.data.list.slice(forecastStart, forecastEnd).map((day) =>

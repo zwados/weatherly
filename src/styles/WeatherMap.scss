@@ -1,8 +1,29 @@
+@import './breakpoints.scss';
+
+.mapPage {
+    position: relative;
+}
+
 .WeatherMap {
     display: flex;
     align-items: center;
     position: relative;
-    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90vw;
+    max-width: 1200px;
+}
+
+#mapTileMenu {
+    display: none;
+
+    &:checked~.mapTileButton {
+        display: table-cell;
+    }
+
+    &:checked+.mapTileButton--menu {
+        content: '<';
+    }
 }
 
 .mapTileButtons {
@@ -11,7 +32,9 @@
     flex-direction: column;
     margin-left: 10px;
     border: none;
-    transform: translateX(105%);
+    left: .1rem;
+    position: absolute;
+
 }
 
 .mapTileButton {
@@ -31,7 +54,7 @@
     border-bottom-right-radius: 2px;
     border-top-right-radius: 2px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 3px 0px;
-    min-width: 130px;
+    max-width: 150px;
     border: none;
     margin-bottom: 10px;
     transition: all .2s linear;
@@ -42,5 +65,19 @@
         background-color: rgb(86, 86, 86);
         color: rgb(255, 255, 255);
         outline-color: transparent;
+    }
+
+    @include mobile {
+        display: none;
+        max-width: 120px;
+        padding: 0 10px;
+    }
+
+    &--menu {
+        display: none;
+
+        @include mobile {
+            display: table-cell;
+        }
     }
 }

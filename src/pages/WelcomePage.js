@@ -7,7 +7,8 @@ const WelcomePage = () => {
         <AppContext.Consumer>
             {(context) => (
                 <div className="welcomePage">
-                    Welcome to <Logo />
+                    <h1>Welcome to <Logo /></h1>
+                    <h2>Choose on of categories listed above to see the results</h2>
                 </div>
             )
             }

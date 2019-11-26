@@ -1,13 +1,260 @@
+@import './breakpoints.scss';
+
 .weatherPage {
-    padding: 30px;
 
     &__content {
-        display: flex;
+        margin-top: 30px;
+    }
+}
 
+.weatherTiles {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+
+
+    @include mobile {
+        grid-template-columns: repeat(1, 1fr);
     }
 
-    &__title {
-        font-size: 20px;
-        text-transform: uppercase;
+    @include tablet {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+.weatherTile {
+
+    &__container {
+        display: flex;
+        height: 450px;
+
+        &--column {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 3px;
+            box-shadow: 0px 3px 6px #989898;
+            flex: 0.9;
+
+            @include mobile {
+                margin: 0 10px;
+            }
+
+            &:not(:last-of-type) {
+                margin-right: 2rem;
+            }
+        }
+    }
+
+    &__date {
+        font-size: 3rem;
+    }
+
+    &__weather {
+        display: flex;
+        font-size: 80px;
+        justify-content: center;
+    }
+
+    &__temp {
+        font-size: 2rem;
+        color: #343434;
+    }
+
+    &__icon {
+        &--current {
+            background-color: whitesmoke;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        &--sun,
+        &--moon {
+            font-size: 3rem;
+        }
+
+        &--sun {
+            color: rgb(255, 180, 88);
+            animation: sun 5s linear infinite;
+        }
+
+        &--moon {
+            color: silver;
+            animation: moon 5s linear infinite;
+        }
+    }
+
+    &__description {
+        font-size: 2rem;
+        align-self: center;
+    }
+
+    &__current {
+        background-image: url('../img/today.png');
+        background-color: #3d3d3d;
+        background-blend-mode: overlay;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        padding: 10px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px;
+
+        h3,
+        div {
+            color: whitesmoke;
+        }
+    }
+
+    &__conditions {
+        background-image: url('../img/weather.jpg');
+        background-color: #3d3d3d;
+        background-blend-mode: overlay;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        padding: 10px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px;
+
+        h2,
+        p {
+            color: whitesmoke;
+        }
+
+        p {
+            font-weight: 500;
+        }
+    }
+
+    &__wind {
+        background-image: url('../img/global-bg.jpg');
+        background-color: #3d3d3d;
+        background-blend-mode: overlay;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        padding: 10px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px;
+
+        @include tablet {
+            padding: 30px;
+        }
+
+        p {
+            color: whitesmoke;
+            font-weight: 500;
+        }
+
+        h2 {
+            color: whitesmoke;
+        }
+    }
+
+    &__windbox {
+        font-size: 6rem;
+        color: whitesmoke;
+    }
+
+    &__time {
+        font-size: 1.4rem;
+        font-weight: 500;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding-left: 15%;
+        background-color: #3d3d3d;
+        background-blend-mode: overlay;
+
+
+        @include mobile {
+            padding-left: 0;
+            font-size: 1.6rem;
+            justify-content: space-evenly;
+        }
+
+        @include tablet {
+            padding-left: 5%;
+        }
+
+        &--top {
+            background-image: url('../img/sunny.png');
+        }
+
+        &--bottom {
+            background-image: url('../img/night.jpg');
+        }
+
+        &--sunrise {
+            color: rgb(252, 145, 15);
+        }
+
+        &--sunset {
+            color: whitesmoke;
+        }
+    }
+}
+
+@keyframes sun {
+    0% {
+        transform: rotate(0deg);
+        color: darkorange;
+    }
+
+    50% {
+        transform: rotate(180deg);
+        color: orangered;
+    }
+
+    100% {
+        transform: rotate(360deg);
+        color: darkorange;
+    }
+}
+
+@keyframes moon {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    25% {
+        transform: rotate(-15deg)
+    }
+
+    50% {
+        transform: rotate(0deg)
+    }
+
+    75% {
+        transform: rotate(15deg)
+    }
+
+    100% {
+        transform: rotate(0deg)
     }
 }
