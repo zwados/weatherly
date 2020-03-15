@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/weatherly/static/css/main.98b2ceac.chunk.css",
+    "main.js": "/weatherly/static/js/main.168fbce5.chunk.js",
+    "main.js.map": "/weatherly/static/js/main.168fbce5.chunk.js.map",
+    "runtime-main.js": "/weatherly/static/js/runtime-main.a8a970fd.js",
+    "runtime-main.js.map": "/weatherly/static/js/runtime-main.a8a970fd.js.map",
+    "static/css/2.7abef457.chunk.css": "/weatherly/static/css/2.7abef457.chunk.css",
+    "static/js/2.d1203b99.chunk.js": "/weatherly/static/js/2.d1203b99.chunk.js",
+    "static/js/2.d1203b99.chunk.js.map": "/weatherly/static/js/2.d1203b99.chunk.js.map",
+    "index.html": "/weatherly/index.html",
+    "precache-manifest.76f636fe72127a30e0fdec67066307da.js": "/weatherly/precache-manifest.76f636fe72127a30e0fdec67066307da.js",
+    "service-worker.js": "/weatherly/service-worker.js",
+    "static/css/2.7abef457.chunk.css.map": "/weatherly/static/css/2.7abef457.chunk.css.map",
+    "static/css/main.98b2ceac.chunk.css.map": "/weatherly/static/css/main.98b2ceac.chunk.css.map",
+    "static/media/WeatherPage.scss": "/weatherly/static/media/weather.b106645c.jpg",
+    "static/media/Header.scss": "/weatherly/static/media/header.b0732ec1.jpg"
+  }
+}
